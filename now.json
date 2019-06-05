@@ -1,0 +1,9 @@
+{
+  "version": 2,
+  "name": "brain-arts-org",
+  "builds": [{ "src": "next.config.js", "use": "@now/next" }],
+  "env": {},
+  "build": {
+    "env": {}
+  }
+}
