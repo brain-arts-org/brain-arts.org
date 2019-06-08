@@ -1,9 +1,16 @@
 {
   "version": 2,
+  "alias": "brain-arts.org",
   "name": "brain-arts-org",
   "builds": [{ "src": "next.config.js", "use": "@now/next" }],
-  "env": {},
+  "env": {
+    "TAKESHAPE_PROJECT": "@takeshape-project",
+    "TAKESHAPE_TOKEN": "@takeshape-token"
+  },
   "build": {
-    "env": {}
+    "env": {
+      "TAKESHAPE_PROJECT": "@takeshape-project",
+      "TAKESHAPE_TOKEN": "@takeshape-token"
+    }
   }
 }
