@@ -1,13 +1,13 @@
 {
   "version": 2,
-  "alias": ["brain-arts.org", "www.brain-arts.org"],
+  "alias": ["www.brain-arts.org"],
   "name": "brain-arts-org",
   "builds": [{ "src": "next.config.js", "use": "@now/next" }],
   "routes": [
     {
       "src": "/(.*)",
       "status": 301,
-      "headers": { "Location": "https://brain-arts.org" }
+      "headers": { "Location": "https://brain-arts.org/$1" }
     }
   ],
   "env": {
