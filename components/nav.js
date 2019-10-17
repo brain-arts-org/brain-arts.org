@@ -40,33 +40,17 @@ const NavListItem = styled.li`
   }
 `;
 
-const ExternalNavLink = styled.a`
+const NavLink = styled.a`
   font-family: DinAlternate;
   font-weight: 400;
   font-size: 24px;
   color: ${props => props.color};
   text-transform: uppercase;
   text-decoration: none;
+  cursor: pointer;
 
   &:visited {
-    color ${props => props.color};
-  }
-
-  ${MediaQueries.small} {
-    font-size: 16px;
-  }
-`;
-
-const InternalNavLink = styled(Link)`
-  font-family: DinAlternate;
-  font-weight: 400;
-  font-size: 24px;
-  color: ${props => props.color};
-  text-transform: uppercase;
-  text-decoration: none;
-
-  &:visited {
-    color ${props => props.color};
+    color: ${props => props.color};
   }
 
   ${MediaQueries.small} {
@@ -92,21 +76,20 @@ const Nav = ({ data }) => (
       </Subheader>
       <NavList>
         {data.links.map((link, index) => {
-          const LinkTag = link.externalLink ? ExternalNavLink : InternalNavLink;
           if (link.externalLink) {
             return (
               <NavListItem key={index}>
-                <ExternalNavLink href={link.url} color={data.linkColor.hex}>
+                <NavLink href={link.url} color={data.linkColor.hex}>
                   {link.text}
-                </ExternalNavLink>
+                </NavLink>
               </NavListItem>
             );
           }
           return (
             <NavListItem key={index}>
-              <InternalLinkTag href={link.url} color={data.linkColor.hex}>
-                <a>{link.text}</a>
-              </InternalLinkTag>
+              <Link href={link.url}>
+                <NavLink color={data.linkColor.hex}>{link.text}</NavLink>
+              </Link>
             </NavListItem>
           );
         })}
