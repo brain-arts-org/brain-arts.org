@@ -144,6 +144,7 @@ class Home extends Component {
     const { navData, footerData, pageData } = this.props;
     const { currentProjectIndex } = this.state;
     const currentProject = pageData.projects[currentProjectIndex];
+    console.log(pageData);
     return (
       <Layout navData={navData} footerData={footerData}>
         <Main
@@ -166,10 +167,10 @@ class Home extends Component {
                 {pageData.aboutBlurb.text}
               </P>
               <SocialLinks>
-                <SocialLink href={pageData.instagramUrl}>
+                <SocialLink href={pageData.aboutBlurb.instagramUrl}>
                   <Img src="/static/images/instagram.png" />
                 </SocialLink>
-                <SocialLink href={pageData.facebookUrl}>
+                <SocialLink href={pageData.aboutBlurb.facebookUrl}>
                   <Img src="/static/images/facebook.png" />
                 </SocialLink>
               </SocialLinks>
