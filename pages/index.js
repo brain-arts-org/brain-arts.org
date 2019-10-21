@@ -144,7 +144,6 @@ class Home extends Component {
     const { navData, footerData, pageData } = this.props;
     const { currentProjectIndex } = this.state;
     const currentProject = pageData.projects[currentProjectIndex];
-    console.log(pageData);
     return (
       <Layout navData={navData} footerData={footerData}>
         <Main
